@@ -1,9 +1,9 @@
-# :package_description
+# A Laravel Filament Image Generator Form Field that extends the FileUpload field for generating images using AI
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/:vendor_slug/:package_slug/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/:vendor_slug/:package_slug/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/:vendor_slug/:package_slug/fix-php-code-styling.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/:vendor_slug/:package_slug/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/naturalGroove/laravel-filament-image-generator-field.svg?style=flat-square)](https://packagist.org/packages/naturalGroove/laravel-filament-image-generator-field)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/naturalGroove/laravel-filament-image-generator-field/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/naturalGroove/laravel-filament-image-generator-field/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/naturalGroove/laravel-filament-image-generator-field/fix-php-code-styling.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/naturalGroove/laravel-filament-image-generator-field/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/naturalGroove/laravel-filament-image-generator-field.svg?style=flat-square)](https://packagist.org/packages/naturalGroove/laravel-filament-image-generator-field)
 
 ![screenshot](https://netseven.dev/filament-image-generator-field/screenshots/main-showcase.webp)
 
@@ -15,26 +15,26 @@ It extends the FileUpload field and adds a button to open the imege generator mo
 You can install the package via composer:
 
 ```bash
-composer require :vendor_slug/:package_slug
+composer require naturalGroove/laravel-filament-image-generator-field
 ```
 
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --tag=":package_slug-migrations"
+php artisan vendor:publish --tag="laravel-filament-image-generator-field-migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag=":package_slug-config"
+php artisan vendor:publish --tag="laravel-filament-image-generator-field-config"
 ```
 
 Optionally, you can publish the views using
 
 ```bash
-php artisan vendor:publish --tag=":package_slug-views"
+php artisan vendor:publish --tag="laravel-filament-image-generator-field-views"
 ```
 
 This is the contents of the published config file:
