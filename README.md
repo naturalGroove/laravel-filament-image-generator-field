@@ -44,6 +44,15 @@ return [
 ];
 ```
 
+## Prerequisites
+
+Default Image Generator is set to OpenAI DALL-E. You should have an API key to use it. You can get it [here](https://platform.openai.com/).
+After You get the API key, you should set it in your .env file:
+
+```bash
+OPEN_AI_DALL_E_API_KEY=your-api-key
+```
+
 ## Usage
 
 Just replace your FileUpload field with ImageGenerator field in your form:
@@ -60,11 +69,6 @@ You could use all the same options as FileUpload field, for example:
     ->disk('private'),
 ```
 
-## Testing
-
-```bash
-composer test
-```
 
 ## Changelog
 
@@ -80,7 +84,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [:author_name](https://github.com/:author_username)
+- [Grzegorz Adamczyk](https://github.com/naturalGroove)
 - [All Contributors](../../contributors)
 
 ## License
