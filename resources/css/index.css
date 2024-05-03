@@ -1,0 +1,23 @@
+@import '../../vendor/filament/filament/resources/css/theme.css';
+
+.btn-ig-generate,
+.btn-ig-edit {
+    color: white !important;
+}
+
+.btn-ig-generate {
+    background-color: #7A4FA2 !important;
+
+    &:hover {
+        background-color: #AC7DD2 !important;
+    }
+}
+
+.btn-ig-edit {
+    background-color: #AD2160 !important;
+
+    &:hover {
+        background-color: #E05297 !important;
+    }
+}
+

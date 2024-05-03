@@ -1,0 +1,86 @@
+{
+    "name": "naturalgroove/laravel-filament-image-generator-field",
+    "description": "A Laravel Filament plugin that generates images using AI",
+    "keywords": [
+        "naturalGroove",
+        "laravel",
+        "laravel-filament-cms",
+        "laravel-filament",
+        "laravel-filament-plugin",
+        "laravel-filament-image-generator-field",
+        "ai-image-generator"
+    ],
+    "homepage": "https://github.com/naturalgroove/laravel-filament-image-generator-field",
+    "support": {
+        "issues": "https://github.com/:vendor_slug/:package_slug/issues",
+        "source": "https://github.com/:vendor_slug/:package_slug"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Grzegorz Adamczyk",
+            "email": "naturalgroove@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "filament/filament": "^3.0",
+        "filament/forms": "^3.0",
+        "filament/tables": "^3.0",
+        "guzzlehttp/guzzle": "^7.8",
+        "openai-php/client": "^0.8.5",
+        "spatie/laravel-package-tools": "^1.15.0",
+        "symfony/http-client": "^6.4"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^7.9",
+        "larastan/larastan": "^2.0.1",
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^2.1",
+        "pestphp/pest-plugin-arch": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "spatie/laravel-ray": "^1.26"
+    },
+    "autoload": {
+        "psr-4": {
+            "NaturalGroove\\Filament\\ImageGeneratorField\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NaturalGroove\\Filament\\ImageGeneratorField\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true,
+            "php-http/discovery": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "NaturalGroove\\Filament\\ImageGeneratorField\\FilamentImageGeneratorFieldServiceProvider"
+            ],
+            "aliases": {
+                "FilamentImageGenerator": "NaturalGroove\\Filament\\ImageGeneratorField\\Facades\\ImageGeneratorField"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
