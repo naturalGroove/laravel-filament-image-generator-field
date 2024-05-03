@@ -68,7 +68,7 @@ You could use all the same options as FileUpload field, for example:
     ->imageEditor()
     ->disk('private'),
 ```
-
+![screenshot](https://netseven.dev/filament-image-generator-field/screenshots/field.webp)
 
 ## Changelog
 
