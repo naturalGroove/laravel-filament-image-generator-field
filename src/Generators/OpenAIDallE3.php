@@ -4,30 +4,30 @@ namespace NaturalGroove\Filament\ImageGeneratorField\Generators;
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-use NaturalGroove\Filament\ImageGeneratorField\Contracts\ImageGenerator;
+use NaturalGroove\Filament\ImageGeneratorField\Contracts\AIImageGenerator;
 use OpenAI;
 
-class OpenAIDallE implements ImageGenerator
+class OpenAIDallE3 implements AIImageGenerator
 {
-    public function generate(string $prompt, int $n = 1, array $params = []): string | array
+    public static string $name = 'OpenAI DALL-E 3';
+
+    public function generate(string $prompt, int $n = 1, array $params = []): array
     {
         $client = $this->getOpenAIClient();
 
         $response = $client->images()->create([
             'model' => 'dall-e-3',
             'prompt' => $prompt,
-            'n' => $n,
+            'n' => 1,
             'size' => $this->matchAspectRatio($params['aspect_ratio']),
             'response_format' => 'url',
+            'quality' => $params['quality'] ?? 'standard',
+            'style' => $params['style'] ?? 'natural',
         ]);
 
-        Log::info('OpenAI Dall-E response', $response->toArray());
+        //Log::info('OpenAI Dall-E response', $response->toArray());
 
-        if ($n === 1) {
-            return $response->data[0]->url;
-        }
-
-        return $response->toArray();
+        return $response->toArray()['data'];
     }
 
     public function fetch(string $url): string
@@ -37,9 +37,35 @@ class OpenAIDallE implements ImageGenerator
         return $response->body();
     }
 
+    public function getName(): string
+    {
+        return static::$name;
+    }
+
     public function getFileExtension(): string
     {
         return config('filament-image-generator-field.openai-dall-e.file_extension') ?? 'png';
+    }
+
+    public function getSupportedOptions(): array
+    {
+        return [
+            'aspect_ratio' => [
+                '1:1' => '1:1',
+                '16:9' => '16:9',
+                '9:16' => '9:16',
+            ],
+
+            'quality' => [
+                'standard' => 'Standard',
+                'hd' => 'High definition',
+            ],
+
+            'style' => [
+                'natural' => 'Natural',
+                'vivid' => 'Vivid',
+            ],
+        ];
     }
 
     // ************************************************************

@@ -14,7 +14,7 @@ class ImageGenerator extends FileUpload
 
     protected string $view = 'filament-image-generator-field::forms.components.image-generator';
 
-    public string | Closure | null $imageGenerator = 'openai-dall-e';
+    public string | Closure | null $imageGenerator;
 
     protected function setUp(): void
     {
@@ -32,6 +32,8 @@ class ImageGenerator extends FileUpload
 
             static::$isComponentRegistered = true;
         }
+
+        $this->imageGenerator(config('filament-image-generator-field.default-generator'));
     }
 
     public function getFieldWrapperView(?string $scope = null): string
@@ -47,8 +49,8 @@ class ImageGenerator extends FileUpload
 
     public function imageGenerator(string | Closure | null $imageGenerator): static
     {
-        if (is_string($imageGenerator) && !config("filament-image-generator-field.{$imageGenerator}")) {
-            throw new \InvalidArgumentException("Image generator `{$imageGenerator}` is not defined in the configuration.");
+        if (is_string($imageGenerator) && !config("filament-image-generator-field.generators.{$imageGenerator}")) {
+            throw new \InvalidArgumentException(__('Image generator `{$imageGenerator}` is not defined in the configuration..'));
         }
 
         $this->imageGenerator = $imageGenerator;
@@ -61,8 +63,13 @@ class ImageGenerator extends FileUpload
         return $this->evaluate($this->imageGenerator);
     }
 
-    public function useDallE(): static
+    public function useDallE2(): static
     {
-        return $this->imageGenerator('openai-dall-e');
+        return $this->imageGenerator('openai-dall-e-2');
+    }
+
+    public function useDallE3(): static
+    {
+        return $this->imageGenerator('openai-dall-e-3');
     }
 }

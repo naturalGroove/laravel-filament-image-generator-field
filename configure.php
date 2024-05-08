@@ -38,8 +38,8 @@ $useLaravelRay = confirm('Enable Ray?', true);
 $useUpdateChangelogWorkflow = confirm('Use automatic changelog updater workflow?', true);
 
 $isTheme = confirm('Is this a custom theme?');
-$formsOnly = ! $isTheme && confirm('Is this for Forms only?');
-$tablesOnly = ! ($isTheme || $formsOnly) && confirm('Is this for Tables only?');
+$formsOnly = !$isTheme && confirm('Is this for Forms only?');
+$tablesOnly = !($isTheme || $formsOnly) && confirm('Is this for Tables only?');
 
 writeln("\r");
 writeln('------');
@@ -67,7 +67,7 @@ writeln("\r");
 writeln('This script will replace the above values in all relevant files in the project directory.');
 writeln("\r");
 
-if (! confirm('Modify files?', true)) {
+if (!confirm('Modify files?', true)) {
     exit(1);
 }
 
@@ -104,7 +104,6 @@ if ($formsOnly) {
         removeDirectory(__DIR__ . '/src/Testing');
 
         setupPackageJsonForTheme();
-
     } else {
         safeUnlink(__DIR__ . '/src/SkeletonTheme.php');
     }
@@ -151,16 +150,16 @@ foreach ($files as $file) {
     };
 }
 
-if (! $useDependabot) {
+if (!$useDependabot) {
     safeUnlink(__DIR__ . '/.github/dependabot.yml');
     safeUnlink(__DIR__ . '/.github/workflows/dependabot-auto-merge.yml');
 }
 
-if (! $useLaravelRay) {
+if (!$useLaravelRay) {
     removeComposerDeps(['spatie/laravel-ray'], 'require-dev');
 }
 
-if (! $usePhpStan) {
+if (!$usePhpStan) {
     safeUnlink(__DIR__ . '/phpstan.neon.dist');
     safeUnlink(__DIR__ . '/phpstan-baseline.neon');
     safeUnlink(__DIR__ . '/.github/workflows/phpstan.yml');
@@ -175,7 +174,7 @@ if (! $usePhpStan) {
     removeComposerDeps(['analyse'], 'scripts');
 }
 
-if (! $usePint) {
+if (!$usePint) {
     safeUnlink(__DIR__ . '/.github/workflows/fix-php-code-style-issues.yml');
     safeUnlink(__DIR__ . '/pint.json');
 
@@ -186,7 +185,7 @@ if (! $usePint) {
     removeComposerDeps(['format'], 'scripts');
 }
 
-if (! $useUpdateChangelogWorkflow) {
+if (!$useUpdateChangelogWorkflow) {
     safeUnlink(__DIR__ . '/.github/workflows/update-changelog.yml');
 }
 
@@ -201,7 +200,7 @@ function ask(string $question, string $default = ''): string
     $def = $default ? "\e[0;33m ($default)" : '';
     $answer = readline("\e[0;32m" . $question . $def . ": \e[0m");
 
-    if (! $answer) {
+    if (!$answer) {
         return $default;
     }
 

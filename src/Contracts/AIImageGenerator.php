@@ -5,16 +5,16 @@ namespace NaturalGroove\Filament\ImageGeneratorField\Contracts;
 /**
  * @internal
  */
-interface ImageGenerator
+interface AIImageGenerator
 {
     /**
      * Generate an image.
      * @param string $prompt
      * @param int $n
      * @param array $params
-     * @return string|array
+     * @return array
      */
-    public function generate(string $prompt, int $n = 1, array $params = []): string | array;
+    public function generate(string $prompt, int $n = 1, array $params = []): array;
 
     /**
      * Fetch an image from an URL.
@@ -28,4 +28,10 @@ interface ImageGenerator
      * @return string
      */
     public function getFileExtension(): string;
+
+    /**
+     * Get the supported options for the generator.
+     * @return array
+     */
+    public function getSupportedOptions(): array;
 }
