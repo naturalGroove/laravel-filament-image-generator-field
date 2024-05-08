@@ -42,7 +42,7 @@ return [
             'select' => 'Auswählen',
             'uploading' => 'Hochladen...',
 
-            'configuration-error' => 'Bitte konfiguriere den API-Schlüssel in der Konfigurationsdatei.',
+            'configuration-error' => 'Die Konfiguration für den ausgewählten Generator ist ungültig. Bitte überprüfen Sie die Konfiguration, wie z.B. den API-Schlüssel, und versuchen Sie es erneut.'
         ]
     ]
 ];

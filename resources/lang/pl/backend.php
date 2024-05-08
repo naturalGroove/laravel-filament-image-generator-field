@@ -42,7 +42,7 @@ return [
             'select' => 'Wybierz',
             'uploading' => 'Przesyłanie...',
 
-            'configuration-error' => 'Proszę skonfigurować klucz API w pliku konfiguracyjnym.',
+            'configuration-error' => 'Konfiguracja dla wybranego generatora jest nieprawidłowa. Sprawdź konfigurację, taką jak klucz API, i spróbuj ponownie. ',
         ]
     ]
 ];

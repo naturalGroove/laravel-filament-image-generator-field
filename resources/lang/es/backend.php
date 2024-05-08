@@ -42,7 +42,7 @@ return [
             'select' => 'Seleccionar',
             'uploading' => 'Subiendo...',
 
-            'configuration-error' => 'Por favor, configura la clave API en el archivo de configuración.',
+            'configuration-error' => 'La configuración para el generador seleccionado no es válida. Por favor, verifica la configuración como la clave de API e intenta nuevamente. ',
         ]
     ]
 ];

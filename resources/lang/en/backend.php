@@ -42,7 +42,7 @@ return [
             'select' => 'Select',
             'uploading' => 'Uploading...',
 
-            'configuration-error' => 'Please configure the API key in the configuration file.',
+            'configuration-error' => 'Configuration for the selected generator is invalid. Please check the configuration like API key and try again. ',
         ]
     ]
 ];

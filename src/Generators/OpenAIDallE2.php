@@ -59,6 +59,11 @@ class OpenAIDallE2 implements AIImageGenerator
         ];
     }
 
+    public function validateConfiguration(): bool
+    {
+        return config('filament-image-generator-field.openai-dall-e.api_key') !== null;
+    }
+
     // ************************************************************
 
     protected function getOpenAIClient(): OpenAI\Client

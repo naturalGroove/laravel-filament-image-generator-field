@@ -41,9 +41,7 @@ class GenerateForm extends Component implements HasForms
     public function mount(): void
     {
         // check if the OpenAI API key is set
-        if (config('filament-image-generator-field.openai-dall-e.api_key')) {
-            $this->isConfigurationOk = true;
-        }
+        $this->isConfigurationOk = $this->getGeneratorObject(config('filament-image-generator-field.default-generator'))->validateConfiguration();
 
         $this->updateImageGenerator(config('filament-image-generator-field.default-generator'));
     }
@@ -159,6 +157,9 @@ class GenerateForm extends Component implements HasForms
 
             $this->generatorName = $generator;
             $this->generator = $this->getGeneratorObject($this->generatorName);
+
+            // check if the configuration for the generator is ok
+            $this->isConfigurationOk = $this->getGeneratorObject(config('filament-image-generator-field.default-generator'))->validateConfiguration();
 
             // set the default values for the form fields
             $defaultFields = [];

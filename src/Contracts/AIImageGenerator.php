@@ -34,4 +34,10 @@ interface AIImageGenerator
      * @return array
      */
     public function getSupportedOptions(): array;
+
+    /**
+     * Verify the configuration of the generator.
+     * @return bool
+     */
+    public function validateConfiguration(): bool;
 }
