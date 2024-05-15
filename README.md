@@ -8,7 +8,7 @@
 This custom field allows you to generate images with different sizes and formats using AI models like OpenAI DALL-E.
 It extends the FileUpload field and adds a button to open the image generator modal where you can set the sizes and formats of the generated images.
 
-![screenshot](https://netseven.dev/filament-image-generator-field/screenshots/plugin-showcase.webp){:.filament-hidden}
+<img src="https://netseven.dev/filament-image-generator-field/screenshots/plugin-showcase.webp" alt="filament image generator ai" width="1920" height="auto" class="filament-hidden" style="width: 100%;" />
 
 # Installation
 
