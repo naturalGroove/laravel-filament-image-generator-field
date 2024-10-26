@@ -34,7 +34,7 @@ composer require naturalGroove/laravel-filament-image-generator-field
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-filament-image-generator-field-config"
+php artisan vendor:publish --tag="filament-image-generator-field-config"
 ```
 
 Configuration file lets you set the default image generator and the available image generators for the field.
@@ -42,7 +42,7 @@ Configuration file lets you set the default image generator and the available im
 Optionally, you can publish the views to customize the field:
 
 ```bash
-php artisan vendor:publish --tag="laravel-filament-image-generator-field-views"
+php artisan vendor:publish --tag="filament-image-generator-field-views"
 ```
 
 ## Usage
